@@ -1,4 +1,3 @@
-forms.py--->
 from django import forms
 from .models import guest
 from django.contrib.auth.forms import UserCreationForm
@@ -9,5 +8,8 @@ class hotelregistration(forms.ModelForm):
     class Meta:
         model=guest  
         fields=['name','email']  
-from django.db import models
 
+class signupform(UserCreationForm):
+    class Meta:
+        model=User
+        fields=['username','first_name','last_name','email']        
