@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block data %}
+
+<h1 align="center">Main Dashboard of Table booking</h1>
+{{data}}
+
+<table border="2" align="center">
+    <tr>
+        <th>gname</th>
+        <th>gmail</th>
+        <th>gphone</th>
+        <th>gdate</th>
+        <th>gtime</th>
+        <th>gpeople</th>
+        <th>gmessage</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.gname}}</td>
+        <td>{{d.gmail}}</td>
+        <td>{{d.gphone}}</td>
+        <td>{{d.gdate}}</td>
+        <td>{{d.gtime}}</td>
+        <td>{{d.gpeople}}</td>
+        <td>{{d.gmessage}}</td>
+        <td><a href="/Edit/{{d.id}}">Edit</a></td>
+        <td><a href="/Delete/{{d.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<a href="/reservetable">view details</a>
+{% endblock data %}

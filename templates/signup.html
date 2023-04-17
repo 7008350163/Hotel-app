@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block data %}
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Guest Signup Registration <span>.</span></h2>
+    <form method="POST" action="/signup">
+        {% csrf_token %}
+        <table>
+            {{form}}
+            <tr>
+                <td><input type="submit" name="send" value="Register"></td>
+            </tr>
+        </table>
+    </form>
+
+{% endblock data %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block data %}
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Guest login<span>.</span></h2>
+    <form method="POST" action="/login">
+        {% csrf_token %}
+        <table>
+            {{form}}
+            <tr>
+                <td><input type="submit" name="send" value="login"></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+{% endblock data %}

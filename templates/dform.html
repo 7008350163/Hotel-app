@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block data %}
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Guest login<span>.</span></h2>
+<form action="showform" method="post" allign="center">
+{% csrf_token %}
+        <table>
+            <br>
+            {{form}}
+            <tr>
+                <td><input type="submit" name="send"/></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+{% endblock data %}
+
+    

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block data %}
+
+<h1 align="center">Main Dashboard of Hotel reveiws</h1>
+{{data}}
+
+<table border="1" align="center">
+    <tr>
+        <th>yourname</th>
+        <th>youremail</th>
+        <th>subject</th>
+        <th>message</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.yourname}}</td>
+        <td>{{d.youremail}}</td>
+        <td>{{d.subject}}</td>
+        <td>{{d.message}}</td>
+        <td><a href="/Edit/{{d.id}}">Edit</a></td>
+        <td><a href="/Delete/{{d.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<a href="/book_table">view details</a>
+{% endblock data %}
